@@ -6,8 +6,12 @@ __author__ = 'Matt'
 
 class Pigo:
 
-    isMoving =False
-    servoPos = 90
+    #####
+    #####  Basic status and methods
+    #####
+
+    status = {'ismoving': False, 'servo': 90, 'leftspeed': 175,
+              'rightspeed': 175}
 
     def __init__(self):
         print "I'm such a pigo."
@@ -23,6 +27,14 @@ class Pigo:
         while fwd() != 1:
             time.sleep(.1)
             print "I can't seem to get going"
+
+    #####
+    #####  advanced methods
+    #####
+
+#####
+#####  main app starts here
+#####
 
 bruh = Pigo()
 bruh.fwd()
