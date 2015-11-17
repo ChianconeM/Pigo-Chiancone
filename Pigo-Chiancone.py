@@ -36,7 +36,7 @@ class Pigo:
         for x in range(3):
             bwd()
 
-    def keepGoinng(self):
+    def keepGoing(self):
         if self.status['dist'] < STOP_DIST:
             return False
         else:
@@ -55,12 +55,23 @@ class Pigo:
 
     def dance(self):
         print "I just want to dance"
-        if self.keepGoinng():
+        if self.keepGoing():
             self.circleRight()
             self.circleLeft()
             self.shuffle()
             self.servoShake()
             self.blink()
+
+    def safeDrive(self):
+        self.fwd()
+        while self.keepGoing()
+            self.checkDist()
+        self.stop()
+
+    def servoSweep(self):
+        for ang in range(20, 160, 5):
+            servo(ang)
+            time.sleep(.1)
 
 #####
 #####  main app starts here
